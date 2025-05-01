@@ -1,4 +1,100 @@
-[gd_scene format=3 uid="uid://bldhq8mxlaeyf"]
+[gd_scene load_steps=8 format=3 uid="uid://bldhq8mxlaeyf"]
+
+[ext_resource type="Script" uid="uid://dky7nplou6gsf" path="res://scripts/systems/systems/intro.gd" id="1_a62kv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a62kv"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_3l8s6"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_1cwbv"]
+font_size = 128
+
+[sub_resource type="Animation" id="Animation_a62kv"]
+resource_name = "presentation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("estudio_name:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 2, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_name:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.23333, 2.5, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game_name:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.2, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_3l8s6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("estudio_name:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("game_name:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("game_name:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3l8s6"]
+_data = {
+&"RESET": SubResource("Animation_3l8s6"),
+&"presentation": SubResource("Animation_a62kv")
+}
 
 [node name="intro" type="Control"]
 layout_mode = 3
@@ -7,6 +103,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a62kv")
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -16,3 +113,62 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="estudio_name" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -68.5
+offset_right = 398.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="estudio_name" type="Label" parent="estudio_name"]
+layout_mode = 2
+text = "Jurubeba Studios"
+label_settings = SubResource("LabelSettings_a62kv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="estudio_name_" type="Label" parent="estudio_name"]
+layout_mode = 2
+text = "apresenta"
+label_settings = SubResource("LabelSettings_3l8s6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="game_name" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -87.5
+offset_right = 398.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(398, 87.5)
+alignment = 1
+
+[node name="game_name" type="Label" parent="game_name"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "A Guarita"
+label_settings = SubResource("LabelSettings_1cwbv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3l8s6")
+}
+autoplay = "presentation"

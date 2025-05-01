@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp261og6gv710"]
+
+[ext_resource type="Script" uid="uid://dcj4mj108uwbj" path="res://scripts/resouces/objects/button_template.gd" id="1_aygv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htira"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aygv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ckfs3"]
+
+[node name="button_template" type="Button" groups=["buttons"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_htira")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_aygv3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aygv3")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_aygv3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_aygv3")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_aygv3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ckfs3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_aygv3")
+flat = true
+script = ExtResource("1_aygv3")

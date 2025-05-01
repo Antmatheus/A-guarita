@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=3 uid="uid://c22uk0cfdeaxh"]
+
+[ext_resource type="PackedScene" uid="uid://dp261og6gv710" path="res://scenes/resouces/objects/button_template.tscn" id="1_v56l7"]
+[ext_resource type="Script" uid="uid://2b7hb3i50uu6" path="res://scripts/systems/systems/credits.gd" id="1_x6mwc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x6mwc"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_sm7jo"]
+font_size = 32
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6mwc")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -294.5
+offset_top = -198.0
+offset_right = 294.5
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="scene_name" type="Label" parent="buttons"]
+layout_mode = 2
+text = "Créditos"
+label_settings = SubResource("LabelSettings_x6mwc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings" type="GridContainer" parent="buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="programmer" type="Label" parent="buttons/settings"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Programador:"
+label_settings = SubResource("LabelSettings_sm7jo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="link_programmer" type="LinkButton" parent="buttons/settings"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Marcos Sousa"
+underline = 2
+uri = "https://marcossousa.itch.io"
+
+[node name="game_designer" type="Label" parent="buttons/settings"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Game Designer:"
+label_settings = SubResource("LabelSettings_sm7jo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="link_game_designer" type="LinkButton" parent="buttons/settings"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Marcos Sousa"
+underline = 2
+uri = "https://marcossousa.itch.io"
+
+[node name="sound_designer" type="Label" parent="buttons/settings"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Sonoplasta: "
+label_settings = SubResource("LabelSettings_sm7jo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="link_sound_designer" type="LinkButton" parent="buttons/settings"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Marcos Sousa"
+underline = 2
+uri = "https://marcossousa.itch.io"
+
+[node name="sound_artist" type="Label" parent="buttons/settings"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Artitsta:"
+label_settings = SubResource("LabelSettings_sm7jo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="link_artist" type="LinkButton" parent="buttons/settings"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "Marcos Sousa"
+underline = 2
+uri = "https://marcossousa.itch.io"
+
+[node name="button_back_to_menu" parent="buttons" instance=ExtResource("1_v56l7")]
+layout_mode = 2
+text = "Voltar ao Menu"

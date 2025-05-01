@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bce3qvg0fmvn6"]
+[gd_scene load_steps=3 format=3 uid="uid://bce3qvg0fmvn6"]
+
+[ext_resource type="Script" uid="uid://8gfb33venqre" path="res://scripts/systems/systems/menu.gd" id="1_gkiwt"]
+[ext_resource type="PackedScene" uid="uid://dp261og6gv710" path="res://scenes/resouces/objects/button_template.tscn" id="2_f360l"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gkiwt")
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -16,3 +20,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -198.0
+offset_right = 224.5
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -30
+alignment = 1
+
+[node name="button_play" parent="buttons" instance=ExtResource("2_f360l")]
+layout_mode = 2
+text = "Jogar"
+
+[node name="button_credits" parent="buttons" instance=ExtResource("2_f360l")]
+layout_mode = 2
+text = "Créditos"
+
+[node name="button_settings" parent="buttons" instance=ExtResource("2_f360l")]
+layout_mode = 2
+text = "Configurações"
+
+[node name="button_exit" parent="buttons" instance=ExtResource("2_f360l")]
+layout_mode = 2
+text = "Sair"
